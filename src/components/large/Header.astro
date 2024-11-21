@@ -1,0 +1,97 @@
+---
+import Divider from "../small/Divider.astro";
+import Gradient from "../small/Gradient.astro";
+---
+
+<header>
+  <h1>LISA.H</h1>
+  <p>
+    LISA.H is an aspiring frontend developer based in the Netherlands.
+    Passionate about accessibility and performance.
+  </p>
+  <h1>LISA.H</h1>
+
+  <div class="divider">
+    <div class="before"></div>
+    <div class="base"></div>
+  </div>
+</header>
+
+<style>
+  header {
+    display: grid;
+    background-color: var(--primary);
+    background-image: url(/src/static/svg/gradient.svg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    header {
+      background-size: 100%;
+      animation: bg-rotate 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes bg-rotate {
+      0% {
+        background-position: left;
+      }
+      25% {
+        background-position: bottom left;
+      }
+      75% {
+        background-position: top right;
+      }
+      100% {
+        background-position: right;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 96px;
+    line-height: 1;
+    letter-spacing: -2px;
+  }
+
+  h1:last-of-type {
+    transform: rotateX(180deg);
+    transform: rotateY(180deg);
+  }
+
+  p {
+    justify-self: center;
+    text-transform: uppercase;
+    text-wrap: balance;
+    line-height: 0.9;
+    font-size: 1.2rem;
+    max-width: 45ch;
+    letter-spacing: -1px;
+    font-variation-settings:
+      "wdth" 100,
+      "wght" 100;
+  }
+
+  .divider {
+    display: flex;
+    flex-direction: row;
+    justify-self: end;
+  }
+
+  .before {
+    align-self: flex-end;
+    height: 1.75rem;
+    width: 2.5rem;
+    background-image: url(/src/static/svg/polygon.svg);
+    background-size: cover;
+  }
+
+  .base {
+    background-color: var(--bg);
+    height: 2rem;
+    width: 10rem;
+    border-radius: 16px 16px 0 0; /* Base border-radius */
+    overflow: hidden; /* Ensures no unwanted overflow */
+  }
+
+</style>
