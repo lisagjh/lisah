@@ -4,13 +4,15 @@ import Gradient from "../small/Gradient.astro";
 ---
 
 <header>
-  <h1>LISA.H</h1>
-  <p>
-    Ex et commodo irure dolor id pariatur irure fugiat reprehenderit qui cupidatat incididunt in ad. Cillum exercitation ipsum occaecat aliqua laboris est ad cillum eiusmod occaecat.
-  </p>
-  <!-- <h1>LISA.H</h1> -->
+  <div class="wrapper">
+    <h1>LISA.H</h1>
+    <p>
+      Ex et commodo irure dolor id pariatur irure fugiat reprehenderit qui
+      cupidatat incididunt in ad. Cillum exercitation ipsum occaecat aliqua
+      laboris est ad cillum eiusmod occaecat.
+    </p>
+    <!-- <h1>LISA.H</h1> -->
 
-  <div class="divider">
     <div class="before"></div>
     <div class="base"></div>
   </div>
@@ -19,14 +21,22 @@ import Gradient from "../small/Gradient.astro";
 <style>
   header {
     display: grid;
+    padding: 1rem;
+    max-width: 750px;
+  }
+
+  .wrapper {
+    display: grid;
+    place-items: center;
     background-color: var(--primary);
     background-image: url(/src/static/svg/gradient.svg);
     background-position: center;
     background-size: cover;
+    border-radius: 12px;
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    header {
+    .wrapper {
       background-size: 100%;
       animation: bg-rotate 8s ease-in-out infinite alternate;
     }
@@ -52,34 +62,37 @@ import Gradient from "../small/Gradient.astro";
     font-size: 96px;
     line-height: 1;
     letter-spacing: -2px;
+    transition: all 0.25s ease-in-out;
   }
 
-  /* h1:last-of-type {
-    transform: rotateX(180deg);
-    transform: rotateY(180deg);
-  } */
-
   p {
-    justify-self: center;
     text-transform: uppercase;
     text-wrap: balance;
-    line-height: 0.9;
+    line-height: 0.95;
     font-size: 1.2rem;
-    max-width: 45ch;
-    letter-spacing: -1px;
+    letter-spacing: -1.5px;
     font-variation-settings:
       "wdth" 100,
       "wght" 100;
+      margin-bottom: 1rem;
+      padding: 0 0.2rem;
   }
 
-  .divider {
-    margin-top: 0.75rem;
-    display: flex;
-    flex-direction: row;
-    justify-self: end;
+  .base {
+    anchor-name: --base;
+    
+    justify-self: flex-end;
+    background-color: var(--bg);
+    height: 2rem;
+    width: 10rem;
+    border-radius: 16px 0 0 0; 
   }
 
   .before {
+    position: absolute;
+    position-anchor: --base;
+    right: anchor(--base left);
+
     align-self: flex-end;
     height: 1.75rem;
     width: 2.5rem;
@@ -87,11 +100,10 @@ import Gradient from "../small/Gradient.astro";
     background-size: cover;
   }
 
-  .base {
-    background-color: var(--bg);
-    height: 2rem;
-    width: 10rem;
-    border-radius: 16px 16px 0 0; /* Base border-radius */
-    overflow: hidden; /* Ensures no unwanted overflow */
+  @media (width > 450px) {
+    .divider,
+    .base {
+      height: 3rem;
+    }
   }
 </style>
