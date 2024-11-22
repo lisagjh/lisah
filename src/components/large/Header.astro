@@ -6,10 +6,9 @@ import Gradient from "../small/Gradient.astro";
 <header>
   <h1>LISA.H</h1>
   <p>
-    LISA.H is an aspiring frontend developer based in the Netherlands.
-    Passionate about accessibility and performance.
+    Ex et commodo irure dolor id pariatur irure fugiat reprehenderit qui cupidatat incididunt in ad. Cillum exercitation ipsum occaecat aliqua laboris est ad cillum eiusmod occaecat.
   </p>
-  <h1>LISA.H</h1>
+  <!-- <h1>LISA.H</h1> -->
 
   <div class="divider">
     <div class="before"></div>
@@ -49,15 +48,16 @@ import Gradient from "../small/Gradient.astro";
   }
 
   h1 {
+    font-family: "Pangram Rounded Bold";
     font-size: 96px;
     line-height: 1;
     letter-spacing: -2px;
   }
 
-  h1:last-of-type {
+  /* h1:last-of-type {
     transform: rotateX(180deg);
     transform: rotateY(180deg);
-  }
+  } */
 
   p {
     justify-self: center;
@@ -73,6 +73,7 @@ import Gradient from "../small/Gradient.astro";
   }
 
   .divider {
+    margin-top: 0.75rem;
     display: flex;
     flex-direction: row;
     justify-self: end;
@@ -93,5 +94,4 @@ import Gradient from "../small/Gradient.astro";
     border-radius: 16px 16px 0 0; /* Base border-radius */
     overflow: hidden; /* Ensures no unwanted overflow */
   }
-
 </style>

@@ -1,6 +1,21 @@
 @font-face {
   font-family: "Instrument Sans";
-  src: url(/src/static/fonts/InstrumentSans-VariableFont_wdth\,wght.woff2);
+  src: url(/src/static/fonts/InstrumentSans-VariableFont_wdth\,wght.woff2) format("woff");
+}
+
+@font-face {
+  font-family: "Pangram Rounded Bold";
+  src: url(/src/static/fonts/PPPangramSansRounded-Bold.woff2);
+}
+
+@font-face {
+  font-family: "Pangram Rounded Medium";
+  src: url(/src/static/fonts/PPPangramSansRounded-Medium.woff2);
+}
+
+@font-face {
+  font-family: "Pangram Rounded Extra Bold";
+  src: url(/src/static/fonts/PPPangramSansRounded-CompressedExtrabold.woff2);
 }
 
 * {
