@@ -1,28 +1,28 @@
 @font-face {
   font-family: "Gokil";
-  src: url(/public/fonts/Gokil.woff2) format("woff"),
-    url(/public/fonts/Gokil.otf) format("otf"),
-    url(/public/fonts/Gokil.ttf) format("ttf");
+  src: url(/fonts/Gokil.woff2) format("woff"),
+    url(/fonts/Gokil.otf) format("otf"),
+    url(/fonts/Gokil.ttf) format("ttf");
 }
 
 @font-face {
   font-family: "Instrument Sans";
-  src: url(/public/fonts/InstrumentSans-VariableFont_wdth\,wght.woff2) format("woff");
+  src: url(/fonts/InstrumentSans-VariableFont_wdth\,wght.woff2) format("woff");
 }
 
 @font-face {
   font-family: "Pangram Rounded Bold";
-  src: url(/public/fonts/PPPangramSansRounded-Bold.woff2) format("woff");
+  src: url(/fonts/PPPangramSansRounded-Bold.woff2) format("woff");
 }
 
 @font-face {
   font-family: "Pangram Rounded Medium";
-  src: url(/public/fonts/PPPangramSansRounded-Medium.woff2) format("woff");
+  src: url(/fonts/PPPangramSansRounded-Medium.woff2) format("woff");
 }
 
 @font-face {
   font-family: "Pangram Rounded Extra Bold";
-  src: url(/public/fonts/PPPangramSansRounded-CompressedExtrabold.woff2) format("woff");
+  src: url(/fonts/PPPangramSansRounded-CompressedExtrabold.woff2) format("woff");
 }
 
 * {

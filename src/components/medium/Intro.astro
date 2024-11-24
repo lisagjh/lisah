@@ -31,4 +31,43 @@ import Icon from "../small/Icon.astro";
     z-index: 5;
     justify-self: center;
   }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes animate-in {
+      0% {
+        opacity: 0;
+        transform: translateY(100%);
+      }
+      35% {
+        opacity: 1;
+        transform: translateY(-10%);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes animate-out {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      100% {
+        scale: 0.6;
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+    }
+
+    h2 {
+      opacity: 0;
+      transform: translateY(-100%);
+      animation:
+        animate-in linear forwards,
+        animate-out linear forwards;
+      animation-timeline: scroll();
+      animation-range: 10vh, 100vh;
+    }
+  }
 </style>
