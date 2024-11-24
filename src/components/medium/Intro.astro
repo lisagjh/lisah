@@ -1,0 +1,33 @@
+---
+import Icon from "../small/Icon.astro";
+---
+
+<section class="intro">
+  <img src="/src/static/assets/avatar.png" alt="" class="avatar" width="345" />
+
+    <!-- <Icon icon="two" className="slide-in-one" />
+    <Icon icon="one" className="slide-in-two" /> -->
+
+  <h2>Hello!</h2>
+</section>
+
+<style>
+  .intro {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .avatar {
+    z-index: 3;
+    position: relative;
+  }
+
+
+  h2 {
+    margin-top: -1rem;
+    z-index: 5; /* Ensure h2 is on top */
+    position: relative;
+    justify-self: center;
+  }
+</style>

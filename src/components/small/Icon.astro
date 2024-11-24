@@ -1,0 +1,56 @@
+---
+export interface Props {
+  icon: string;
+  className?: string; // Optional custom animation classes
+}
+
+const { icon, className } = Astro.props as Props;
+const { default: innerHTML } = await import(`/src/static/svg/${icon}.svg?raw`);
+---
+
+<!-- Direct SVG content without unnecessary wrappers -->
+<span class={`icon ${className ?? ''}`} set:html={innerHTML}></span>
+
+<style>
+  .icon {
+    position: relative;
+    height: fit-content;
+    width: fit-content;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      .slide-in-one {
+        transform: translateY(-150px);
+        rotate: 360deg;
+        transform-origin: center;
+        animation: slide-in-one 1s linear forwards;
+        animation-timeline: view();
+        animation-range: 0vh 40vh;
+      }
+
+      @keyframes slide-in-one {
+        from {
+          rotate: 0deg;
+          transform: translateY(120px);
+        }
+      }
+
+      .slide-in-two {
+        transform: translateY(-150px);
+        rotate: -360deg;
+        transform-origin: center;
+        animation: slide-in-two 1s linear forwards;
+        animation-timeline: view();
+        animation-range: 0vh 40vh;
+      }
+
+      @keyframes slide-in-two {
+        from {
+          rotate: 0deg;
+          transform: translateY(120px);
+        }
+      }
+    }
+  }
+</style>
