@@ -3,9 +3,12 @@ import Icon from "../small/Icon.astro";
 ---
 
 <section class="intro">
-  <img src="../assets/avatar.png" alt="" class="avatar" width="345" />
+  <picture class="avatar">
+    <source srcset="../assets/avatar.webp" type="image/webp" />
+    <img src="../assets/avatar.png" alt="" width="345" />
+  </picture>
 
-    <!-- <Icon icon="two" className="slide-in-one" />
+  <!-- <Icon icon="two" className="slide-in-one" />
     <Icon icon="one" className="slide-in-two" /> -->
 
   <h2>Hello!</h2>
@@ -22,7 +25,6 @@ import Icon from "../small/Icon.astro";
     z-index: 3;
     position: relative;
   }
-
 
   h2 {
     margin-top: -1rem;
