@@ -1,8 +1,3 @@
----
-import Divider from "../small/Divider.astro";
-import Gradient from "../small/Gradient.astro";
----
-
 <header>
   <div class="wrapper">
     <h1>LISA.H</h1>
@@ -15,6 +10,7 @@ import Gradient from "../small/Gradient.astro";
 
     <div class="before"></div>
     <div class="base"></div>
+    <div class="after"></div>
   </div>
 </header>
 
@@ -32,9 +28,7 @@ import Gradient from "../small/Gradient.astro";
     display: grid;
     place-items: center;
     background-color: var(--primary);
-    background-image: url(/src/static/svg/gradient.svg);
-    /* background-position: center; */
-    background-size: cover;
+    background-image: url(/svg/gradient.svg);
     border-radius: 12px;
     margin-top: 1.5rem;
   }
@@ -80,12 +74,22 @@ import Gradient from "../small/Gradient.astro";
     align-self: flex-end;
     height: 1.75rem;
     width: 2.5rem;
-    background-image: url(/src/static/svg/polygon.svg);
+    background-image: url(/svg/polygon.svg);
+    background-size: cover;
+  }
+
+  .after {
+    position: absolute;
+    position-anchor: --base;
+    bottom: anchor(--base top);
+    right: anchor(--base right);
+    height: 1.75rem;
+    width: 2.5rem;
+    background-image: url(/svg/polygon.svg);
     background-size: cover;
   }
 
   @media (width > 450px) {
-    .divider,
     .base {
       height: 3.5rem;
     }
@@ -95,7 +99,7 @@ import Gradient from "../small/Gradient.astro";
     .wrapper {
       background-size: 100%;
       background-position: bottom;
-      /* animation: bg-rotate 8s ease-in-out infinite alternate; */
+      animation: bg-rotate 8s ease-in-out infinite alternate;
     }
 
     @keyframes bg-rotate {
