@@ -6,9 +6,7 @@
       about creating accessible and performant websites.
     </p>
 
-    <div class="before"></div>
     <div class="base"></div>
-    <div class="after"></div>
   </div>
 </header>
 
@@ -35,13 +33,6 @@
     transition: all 0.2s linear ease-in-out;
   }
 
-  /* anchor positioning isnt supported in all browsers, use @supports later to only show then */
-  .before,
-  .base,
-  .after {
-    display: none;
-  }
-
   h1 {
     font-family: "Gokil";
     font-weight: 400;
@@ -66,52 +57,43 @@
     padding: 0 0.2rem;
   }
 
-  @supports (position-anchor: auto) {
-    .before,
-    .base,
-    .after {
-      display: block;
-    }
+  .base {
+    --element-color: var(--bg);
+    background-color: var(--element-color);
 
-    .base {
-      anchor-name: --base;
-
-      justify-self: flex-end;
-      align-self: flex-end;
-      background-color: var(--bg);
-      height: 2.5rem;
-      width: 10rem;
-      border-radius: 16px 0 0 0;
-    }
-
-    .before {
-      position: absolute;
-      position-anchor: --base;
-      right: anchor(--base left);
-
-      align-self: flex-end;
-      height: 1.75rem;
-      width: 2.5rem;
-      background-image: url(/svg/polygon.svg);
-      background-size: cover;
-    }
-
-    .after {
-      position: absolute;
-      position-anchor: --base;
-      bottom: anchor(--base top);
-      right: anchor(--base right);
-      height: 1.75rem;
-      width: 2.5rem;
-      background-image: url(/svg/polygon.svg);
-      background-size: cover;
-    }
+    position: relative;
+    justify-self: flex-end;
+    align-self: flex-end;
+    background-color: var(--bg);
+    height: 2.5rem;
+    width: 10rem;
+    border-radius: 1rem 0 0;
   }
 
-  @media (width > 450px) {
-    .base {
-      height: 3.5rem;
-    }
+  .base::before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    height: 3rem;
+    width: 4rem;
+    top: -.5rem;
+    left: -4rem;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 1rem 0 0 var(--element-color);
+    z-index: 10;
+  }
+
+  .base::after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    height: 3rem;
+    width: 4rem;
+    top: -3rem;
+    right: 0;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 1rem 0 0 var(--element-color);
+    z-index: 10;
   }
 
   @media (prefers-reduced-motion: no-preference) {
