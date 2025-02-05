@@ -1,11 +1,4 @@
 @font-face {
-  font-family: "Gokil";
-  src: url(/fonts/Gokil.woff2) format("woff"),
-    url(/fonts/Gokil.otf) format("otf"),
-    url(/fonts/Gokil.ttf) format("ttf");
-}
-
-@font-face {
   font-family: "Instrument Sans";
   src: url(/fonts/InstrumentSans-VariableFont_wdth\,wght.woff2) format("woff");
 }
@@ -32,23 +25,14 @@
 }
 
 :root {
-  --text: #f9f8f8;
-  --bg: #121212;
+  --text: #121212;
+  --bg: #f4f0eb;
 
   --primary: #4f21a0;
   --secondary: #e5701d;
   --tertiary: #ffbb1d;
   --extra-color: #1d55e5;
 
-  --accent: 136, 58, 234;
-  --accent-light: 224, 204, 250;
-  --accent-dark: 49, 10, 101;
-  --accent-gradient: linear-gradient(
-    45deg,
-    rgb(var(--accent)),
-    rgb(var(--accent-light)) 30%,
-    white 60%
-  );
 }
 
 html {
@@ -77,14 +61,12 @@ footer {
 }
 
 h1, h2, h3 {
-  font-family: "Gokil", "Pangram Rounded Extra Bold";
   font-weight: 400;
 }
 
 h2 {
   font-size: 72px;
   line-height: 1;
-  text-transform: uppercase;
 }
 
 p {
@@ -92,63 +74,4 @@ p {
   font-variation-settings:
   "wdth" 95,
   "wght" 500;
-  text-transform: uppercase;
-}
-
-
-/* reusable classes */
-
-/** inverted border radius on the bottom of the element */
-/* element-color is defined on element level */
-.inverted-border-radius-bottom::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  background-color: transparent;
-  bottom: -3rem;
-  height: 3rem;
-  width: 4rem;
-  border-top-left-radius: 15px;
-  box-shadow: 0 -15px 0 0 var(--element-color);
-  z-index: -1;
-}
-
-.inverted-border-radius-bottom::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  background-color: transparent;
-  bottom: -3rem;
-  height: 3rem;
-  width: 4rem;
-  border-top-right-radius: 15px;
-  box-shadow: 0 -15px 0 0 var(--element-color);
-  z-index: -1;
-}
-
-/** inverted border radius on the top of the element */
-.inverted-border-radius-top::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  background-color: transparent;
-  height: 3rem;
-  width: 4rem;
-  top: -3rem;
-  border-bottom-left-radius: 15px;
-  box-shadow: 0 15px 0 0 var(--element-color);
-  z-index: -1;
-}
-
-.inverted-border-radius-top::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  background-color: transparent;
-  height: 3rem;
-  width: 4rem;
-  top: -3rem;
-  border-bottom-right-radius: 15px;
-  box-shadow: 0 15px 0 0 var(--element-color);
-  z-index: -1;
 }
